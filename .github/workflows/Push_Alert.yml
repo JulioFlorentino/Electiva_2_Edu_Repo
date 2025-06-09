@@ -12,7 +12,9 @@ jobs:
     steps:
       - name: Enviar notificación a ntfy.sh
         run: |
-          curl -H "Title: 🚀 Nuevo push al repositorio" \
+          curl -H "Title: Nuevo push al repositorio" \
                 -H "Priority: high" \
                 -d "Se ha subido nuevo código al branch main." \
+                -d "Dev: Julio Florentino." \
+                -d "M:2023-1406." \
                 https://ntfy.sh/devops-itla
