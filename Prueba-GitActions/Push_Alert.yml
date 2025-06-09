@@ -1,0 +1,18 @@
+# .github/workflows/alerta.yml
+name: Alerta de Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -H "Title: 🚀 Nuevo push al repositorio" \
+                -H "Priority: high" \
+                -d "Se ha subido nuevo código al branch main." \
+                https://ntfy.sh/devops-itla
