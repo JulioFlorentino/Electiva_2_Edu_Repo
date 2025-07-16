@@ -1,0 +1,16 @@
+services:
+  node1:
+    build: .
+    image: nginx:latest
+    container_name: node1
+    ports:
+      - "2222:22"
+      - "8181:80"   # Mapea el puerto 80 del contenedor al 8181 del host
+
+  node2:
+    build: .
+    image: nginx:latest
+    container_name: node2
+    ports:
+      - "2223:22"
+      - "8182:80"   # Mapea el puerto 80 del contenedor al 8182 del host
